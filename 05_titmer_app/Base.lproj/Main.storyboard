@@ -1,24 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_5_titmer_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerMain" translatesAutoresizingMaskIntoConstraints="NO" id="ojv-5C-Ftd">
+                                <rect key="frame" x="157" y="68" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Sog-ig-zlb"/>
+                                    <constraint firstAttribute="height" constant="100" id="bqz-H5-f1C"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTD-22-cZ2">
+                                <rect key="frame" x="24" y="248" width="366" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="qXA-U4-tVV">
+                                <rect key="frame" x="48" y="338" width="318" height="4"/>
+                            </progressView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ED-at-1mi">
+                                <rect key="frame" x="47" y="198" width="320" height="216"/>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Eo9-Lh-8LJ">
+                                <rect key="frame" x="24" y="438" width="366" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAO-eV-bRJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="31"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Cancel"/>
+                                        <connections>
+                                            <action selector="tabCancelBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJO-RU-Izn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjR-ML-stZ">
+                                        <rect key="frame" x="223" y="0.0" width="143" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                        <connections>
+                                            <action selector="tabToggleBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ogD-tT-4sF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Eo9-Lh-8LJ" firstAttribute="top" secondItem="4ED-at-1mi" secondAttribute="bottom" constant="24" id="4uj-e6-uRv"/>
+                            <constraint firstItem="yTD-22-cZ2" firstAttribute="top" secondItem="ojv-5C-Ftd" secondAttribute="bottom" constant="80" id="MiV-9h-dsr"/>
+                            <constraint firstItem="qXA-U4-tVV" firstAttribute="top" secondItem="yTD-22-cZ2" secondAttribute="bottom" constant="30" id="T1s-lO-3XF"/>
+                            <constraint firstItem="ojv-5C-Ftd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8e-s0-sd2"/>
+                            <constraint firstItem="qXA-U4-tVV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="X8M-pL-IgG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eo9-Lh-8LJ" secondAttribute="trailing" constant="24" id="Xaf-Iu-N98"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTD-22-cZ2" secondAttribute="trailing" constant="24" id="bME-lJ-mQZ"/>
+                            <constraint firstItem="4ED-at-1mi" firstAttribute="top" secondItem="ojv-5C-Ftd" secondAttribute="bottom" constant="30" id="gsa-OT-qbK"/>
+                            <constraint firstItem="ojv-5C-Ftd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="iEc-B3-gX1"/>
+                            <constraint firstItem="Eo9-Lh-8LJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="qb0-0O-JSW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qXA-U4-tVV" secondAttribute="trailing" constant="48" id="sZb-x1-tCw"/>
+                            <constraint firstItem="4ED-at-1mi" firstAttribute="centerX" secondItem="ojv-5C-Ftd" secondAttribute="centerX" id="wOT-dm-lpb"/>
+                            <constraint firstItem="yTD-22-cZ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="yK2-J6-i95"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="oAO-eV-bRJ" id="93a-kH-N73"/>
+                        <outlet property="datePicker" destination="4ED-at-1mi" id="n2i-xy-GXS"/>
+                        <outlet property="imageView" destination="ojv-5C-Ftd" id="a4e-iq-K9Z"/>
+                        <outlet property="pregressView" destination="qXA-U4-tVV" id="AhA-vB-vLv"/>
+                        <outlet property="timerLabel" destination="yTD-22-cZ2" id="kYX-iT-0vH"/>
+                        <outlet property="toggleBtn" destination="cjR-ML-stZ" id="dvq-pV-B6V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="116"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="timerMain" width="170.5" height="170.5"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
