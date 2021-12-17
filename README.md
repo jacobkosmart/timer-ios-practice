@@ -1,10 +1,6 @@
-# Timer-app-iOS-practice
+# 🕰 TimerApp-iOS-practice
 
 <img width="350" alt="스크린샷" src="https://user-images.githubusercontent.com/28912774/146492923-8c27ce42-ef18-4ce1-a8d8-433be420d3fc.gif">
-
-## 🕰 Timer-App
-
-Timer 를 이용해서 25분간 집중하고, 5분간 휴식을 취하는 방식입니다
 
 ## 📌 기능 상세
 

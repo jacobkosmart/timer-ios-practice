@@ -59,7 +59,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Eo9-Lh-8LJ" firstAttribute="top" secondItem="4ED-at-1mi" secondAttribute="bottom" constant="24" id="4uj-e6-uRv"/>
                             <constraint firstItem="yTD-22-cZ2" firstAttribute="top" secondItem="ojv-5C-Ftd" secondAttribute="bottom" constant="80" id="MiV-9h-dsr"/>
@@ -92,6 +92,9 @@
     </scenes>
     <resources>
         <image name="timerMain" width="170.5" height="170.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
